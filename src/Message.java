@@ -31,8 +31,8 @@ public class Message {
     public String key() { //for when you type xyzzy
         return TEXT_BLUE + """
                 You Utter The Weird Word Written On The Wall.
-                All Of A Sudden You Are Stunned But A Bright Flash Of Light!
-                As Your Vision Returns, You Find Yourself Out Of The Weird Dungeon.
+                All Of A Sudden You Are Stunned By A Bright Flash Of Light!
+                As Your Vision Returns, You Find Yourself Out Of The Strange Dungeon.
                 You Are Free Once Again, CONGRATULATIONS!
                 """ + TEXT_RESET;
     }

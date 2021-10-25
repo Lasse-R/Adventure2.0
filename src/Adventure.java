@@ -29,6 +29,7 @@ public class Adventure {
                     player.moveNorth();
                     System.out.println("Going North");
                     System.out.println(player.roomName());
+                    System.out.println(player.getRoomDescription());
                 }
 
             } else if (playerInput.equalsIgnoreCase("east") ||
@@ -39,6 +40,7 @@ public class Adventure {
                     player.moveEast();
                     System.out.println("Going East");
                     System.out.println(player.roomName());
+                    System.out.println(player.getRoomDescription());
                 }
 
             } else if (playerInput.equalsIgnoreCase("south") ||
@@ -49,6 +51,7 @@ public class Adventure {
                     player.moveSouth();
                     System.out.println("Going South");
                     System.out.println(player.roomName());
+                    System.out.println(player.getRoomDescription());
                 }
 
             } else if (playerInput.equalsIgnoreCase("west") ||
@@ -59,17 +62,17 @@ public class Adventure {
                     player.moveWest();
                     System.out.println("Going West");
                     System.out.println(player.roomName());
+                    System.out.println(player.getRoomDescription());
                 }
 
             } else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
-                System.out.println("Looking For Stuff In This Room.");
+                System.out.println("Looking For Stuff In This Area.");
                 if (player.lookAround().equals("[]")) {
-                    System.out.println("There Are No Items In This Room.");
+                    System.out.println("There Are No Items In This Area.");
                 } else {
                     System.out.println(player.lookAround());
                 }
-                if (player.invalidRouteNorth() == null && player.invalidRouteWest() == null &&
-                        player.invalidRouteEast() == null) {
+                if (player.getCurrentRoom().getRoomNumber() == 5) {
                     System.out.println(message.xyzzy());
                 }
             }

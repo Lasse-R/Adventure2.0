@@ -49,6 +49,9 @@ public class Player {
     public String roomName() {
         return currentRoom.getName();
     }
+    public String getRoomDescription(){
+        return currentRoom.getDescription();
+    }
 
     public String lookAround() {
         return currentRoom.roomLoot();

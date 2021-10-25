@@ -7,19 +7,24 @@ public class Room {
     final private int roomNumber;
     private ArrayList<Item> loot;
     Map map = new Map();
+    FluffyRoomDescription fluffyRoomDescription = new FluffyRoomDescription();
+
 
     private Room north;
     private Room east;
     private Room west;
     private Room south;
 
-    public Room(String name, int roomNumber) {
-        this.name = name;
+    public Room(int roomNumber, ArrayList loot) {
+        this.name = fluffyRoomDescription.roomName();
+        this.description = fluffyRoomDescription.roomDescription();
         this.roomNumber = roomNumber;
+        this.loot = loot;
     }
 
-    public Room(String name, int roomNumber, ArrayList loot){
+    public Room(String name, String description, int roomNumber, ArrayList loot){
         this.name = name;
+        this.description = description;
         this.roomNumber = roomNumber;
         this.loot = loot;
     }
@@ -69,6 +74,12 @@ public class Room {
     }
     public void showLoot(){
         System.out.println(loot.toString());
+    }
+    public String getDescription(){
+        return description;
+    }
+    public int getRoomNumber(){
+        return roomNumber;
     }
 }
 

@@ -25,15 +25,15 @@ public class Map {
         ArrayList<Item> loot8 = new ArrayList<>();
         ArrayList<Item> loot9 = new ArrayList<>();
 
-        Room room1 = new Room("You Find Yourself In A Dark Room With Mossy Walls.", 1, loot1);
-        Room room2 = new Room("You Find Yourself On A Dimly Lit Swirly Staircase.", 2, loot2);
-        Room room3 = new Room("You Find Yourself In A Cold And Abandoned Wine Cellar.", 3, loot3);
-        Room room4 = new Room("You Find Yourself In A Long And Narrow Hallway With Torches On The Walls.", 4, loot4);
-        Room room5 = new Room("You Find Yourself In A Large Room, There's Something Unusual About This Place.", 5, loot5);
-        Room room6 = new Room("You Find Yourself In A Small, Almost Claustrophobic Tract That Only Seems To Lead In One Direction.", 6, loot6);
-        Room room7 = new Room("You Find Yourself In What Seems To Be A Huge Dining Room.", 7, loot7);
-        Room room8 = new Room("You Find Yourself In A Huge Corridor, There Seems To Be Three Passageways Here.", 8, loot8);
-        Room room9 = new Room("You Find Yourself In A Dungeon Full Of Small Prison Cells.", 9, loot9);
+        Room room1 = new Room("Enjoyable cave.", "A warm, safe and cozy area.", 1, loot1);
+        Room room2 = new Room(2, loot2);
+        Room room3 = new Room(3, loot3);
+        Room room4 = new Room(4, loot4);
+        Room room5 = new Room(5, loot5);
+        Room room6 = new Room(6, loot6);
+        Room room7 = new Room(7, loot7);
+        Room room8 = new Room(8, loot8);
+        Room room9 = new Room(9, loot9);
 
         room1.setEast(room2);
         room1.setSouth(room4);
