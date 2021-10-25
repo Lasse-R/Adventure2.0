@@ -3,64 +3,70 @@ import java.util.ArrayList;
 public class Player {
 
     private Room currentRoom;
-    ArrayList<Item> inventory;
+    ArrayList<Item> inventory = new ArrayList<>();
     Item currentItem;
 
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
 
-    public Room getCurrentRoom(){
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
-    public void moveNorth(){
+    public void moveNorth() {
         setCurrentRoom(getCurrentRoom().getNorth());
     }
 
-    public void moveEast(){
+    public void moveEast() {
         setCurrentRoom(getCurrentRoom().getEast());
     }
 
-    public void moveSouth(){
+    public void moveSouth() {
         setCurrentRoom(getCurrentRoom().getSouth());
     }
 
-    public void moveWest(){
+    public void moveWest() {
         setCurrentRoom(getCurrentRoom().getWest());
     }
 
-    public Room invalidRouteNorth(){
+    public Room invalidRouteNorth() {
         return getCurrentRoom().getNorth();
     }
 
-    public Room invalidRouteEast(){
+    public Room invalidRouteEast() {
         return getCurrentRoom().getEast();
     }
 
-    public Room invalidRouteSouth(){
+    public Room invalidRouteSouth() {
         return getCurrentRoom().getSouth();
     }
 
-    public Room invalidRouteWest(){
+    public Room invalidRouteWest() {
         return getCurrentRoom().getWest();
     }
 
-    public String roomName(){
+    public String roomName() {
         return currentRoom.getName();
     }
 
-    public String lookAround(){
+    public String lookAround() {
         return currentRoom.roomLoot();
     }
 
-    public Item takeItem(){
-        for(int i = 0; i < currentRoom.getLoot().size(); i++){
+    public void takeItem() {
+        for (int i = 0; i < currentRoom.getLoot().size(); i++) {
             currentItem = currentRoom.getLoot().get(i);
-                if(currentItem.getName().equalsIgnoreCase())
+            if (currentItem.getName().equalsIgnoreCase(currentRoom.getLoot().toString())) {
+                inventory.add(currentItem);
+            }
 
         }
 
+    }
+
+    public void showInventory(){
+        System.out.println(inventory.toString());
     }
 
 }

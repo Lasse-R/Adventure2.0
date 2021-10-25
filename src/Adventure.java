@@ -72,7 +72,9 @@ public class Adventure {
                 }
             }
 
-            else if (playerInput.equalsIgnoreCase("take")) { //add items to inventory
+            else if (playerInput.equalsIgnoreCase("take sword") ||
+                    playerInput.equalsIgnoreCase("take bread")) {//add items to inventory
+                player.takeItem();
                 System.out.println("Picked up room item(PH)");
             }
 
@@ -80,8 +82,8 @@ public class Adventure {
                 System.out.println("removing item from inventory(PH)");
             }
 
-            else if (playerInput.equalsIgnoreCase("inventory")) { //Look up what is in inventory
-                System.out.println("Your inventory consists of: ");
+            else if (playerInput.equalsIgnoreCase("inventory")) {//Look up what is in inventory
+                player.showInventory();
             }
 
             else if (playerInput.equalsIgnoreCase("commands")) { //prints list of commands

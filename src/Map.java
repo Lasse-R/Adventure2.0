@@ -2,15 +2,15 @@ import java.util.ArrayList;
 
 public class Map {
 
-    Item sword = new Weapon("Two-Handed Sword", 50, 5);
-    Item hammer = new Weapon("An Ordinary Hammer", 50, 5);
-    Item mace = new Weapon("Small Wooden Mace", 50, 5);
-    Item spear = new Weapon("Rather Large Spear", 50, 5);
-    Item cutlass = new Weapon("Pirates Cutlass", 50, 5);
-    Item bread = new Food("Stale Old Bread", 1, "Stale");
-    Item apple = new Food("Rotten Stinking Apple", 1, "Stale");
-    Item oats = new Food("Roach Infested Oats", 1, "Stale");
-    Item snickers = new Food("Half-Eating Snickers Bar", 1, "Stale");
+    Item sword = new Weapon("sword", 50, 5);
+    Item hammer = new Weapon("hammer", 50, 5);
+    Item mace = new Weapon("mace", 50, 5);
+    Item spear = new Weapon("spear", 50, 5);
+    Item cutlass = new Weapon("cutlass", 50, 5);
+    Item bread = new Food("bread", 1, "Stale");
+    Item apple = new Food("apple", 1, "Stale");
+    Item oats = new Food("oats", 1, "Stale");
+    Item snickers = new Food("snickers", 1, "Stale");
     Item twix = new Food("Twix", 1, "Stale");
 
 
