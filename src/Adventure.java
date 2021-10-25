@@ -85,7 +85,7 @@ public class Adventure {
             }
 
             else if (playerInput.equalsIgnoreCase("commands")) { //prints list of commands
-                System.out.println("| North | East | South | West | Look | Take | Remove | Inventory | Commands | Quit |");
+                System.out.println("| North | East | South | West | Look | Take | Drop | Inventory | Commands | Quit |");
             }
 
             else if (playerInput.equalsIgnoreCase("quit")) { //quits the game

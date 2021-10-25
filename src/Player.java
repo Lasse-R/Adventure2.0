@@ -4,6 +4,7 @@ public class Player {
 
     private Room currentRoom;
     ArrayList<Item> inventory;
+    Item currentItem;
 
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
@@ -51,6 +52,15 @@ public class Player {
 
     public String lookAround(){
         return currentRoom.roomLoot();
+    }
+
+    public Item takeItem(){
+        for(int i = 0; i < currentRoom.getLoot().size(); i++){
+            currentItem = currentRoom.getLoot().get(i);
+                if(currentItem.getName().equalsIgnoreCase())
+
+        }
+
     }
 
 }

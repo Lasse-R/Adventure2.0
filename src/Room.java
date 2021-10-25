@@ -24,6 +24,10 @@ public class Room {
         this.loot = loot;
     }
 
+    public ArrayList<Item> getLoot(){
+        return loot;
+    }
+
     public void setNorth(Room north) {
         this.north = north;
     }
