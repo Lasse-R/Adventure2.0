@@ -54,14 +54,25 @@ public class Player {
         return currentRoom.roomLoot();
     }
 
-    public void takeItem() {
+    public void takeItem(String pickItemName) {
         for (int i = 0; i < currentRoom.getLoot().size(); i++) {
             currentItem = currentRoom.getLoot().get(i);
-            if (currentItem.getName().equalsIgnoreCase(getCurrentRoom().getLoot().get(i).getName())) {
+            if (currentItem.getName().equalsIgnoreCase(pickItemName)) {
                 inventory.add(currentItem);
                 getCurrentRoom().getLoot().remove(i);
             }
         }
+    }
+
+    public void dropItem(String itemName){
+        for(int i = 0; i < inventory.size(); i++){
+            currentItem = inventory.get(i);
+            if(inventory.get(i).getName().equalsIgnoreCase(itemName)){
+                inventory.remove(i);
+                getCurrentRoom().getLoot().add(currentItem);
+            }
+        }
+
     }
 
     public void showInventory(){

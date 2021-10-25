@@ -12,6 +12,8 @@ public class Adventure {
         System.out.println(message.intro()); //prints the welcome message and instructions on start-up
         player.setCurrentRoom(map.roomCreation()); //places the player in room one and creates the map.
         System.out.println(player.roomName()); //prints current room at the start of the game
+        String dropItemName;
+        String pickItemName;
 
         while (gameActive) {
 
@@ -72,18 +74,25 @@ public class Adventure {
                 }
             }
 
-            else if (playerInput.equalsIgnoreCase("take sword") ||
-                    playerInput.equalsIgnoreCase("take bread")) {//add items to inventory
-                player.takeItem();
-                System.out.println("Picked up room item(PH)");
+            else if (playerInput.equalsIgnoreCase("take")) {//add items to inventory
+                player.getCurrentRoom().showLoot();
+                System.out.println("Which item would you like to pick up?");
+                pickItemName = scanner.nextLine();
+                player.takeItem(pickItemName);
+
+
             }
 
             else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
-                System.out.println("removing item from inventory(PH)");
+                player.showInventory();
+                System.out.println("Which item would you like to drop?");
+                dropItemName = scanner.nextLine();
+                player.dropItem(dropItemName);
             }
 
             else if (playerInput.equalsIgnoreCase("inventory")) {//Look up what is in inventory
                 player.showInventory();
+
             }
 
             else if (playerInput.equalsIgnoreCase("commands")) { //prints list of commands

@@ -67,5 +67,8 @@ public class Room {
     public String roomLoot(){
         return loot.toString();
     }
+    public void showLoot(){
+        System.out.println(loot.toString());
+    }
 }
 
