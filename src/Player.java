@@ -57,12 +57,11 @@ public class Player {
     public void takeItem() {
         for (int i = 0; i < currentRoom.getLoot().size(); i++) {
             currentItem = currentRoom.getLoot().get(i);
-            if (currentItem.getName().equalsIgnoreCase(currentRoom.getLoot().toString())) {
+            if (currentItem.getName().equalsIgnoreCase(getCurrentRoom().getLoot().get(i).getName())) {
                 inventory.add(currentItem);
+                getCurrentRoom().getLoot().remove(i);
             }
-
         }
-
     }
 
     public void showInventory(){

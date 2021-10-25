@@ -2,19 +2,18 @@ import java.util.ArrayList;
 
 public class Map {
 
-    Item sword = new Weapon("sword", 50, 5);
-    Item hammer = new Weapon("hammer", 50, 5);
-    Item mace = new Weapon("mace", 50, 5);
-    Item spear = new Weapon("spear", 50, 5);
-    Item cutlass = new Weapon("cutlass", 50, 5);
-    Item bread = new Food("bread", 1, "Stale");
-    Item apple = new Food("apple", 1, "Stale");
-    Item oats = new Food("oats", 1, "Stale");
-    Item snickers = new Food("snickers", 1, "Stale");
-    Item twix = new Food("Twix", 1, "Stale");
-
-
     public Room roomCreation() {//creating all the rooms and assigning pathways
+
+        Item sword = new Weapon("sword", 50, 5);
+        Item hammer = new Weapon("hammer", 50, 5);
+        Item mace = new Weapon("mace", 50, 5);
+        Item spear = new Weapon("spear", 50, 5);
+        Item cutlass = new Weapon("cutlass", 50, 5);
+        Item bread = new Food("bread", 1, "Stale");
+        Item apple = new Food("apple", 1, "Stale");
+        Item oats = new Food("oats", 1, "Stale");
+        Item snickers = new Food("snickers", 1, "Stale");
+        Item twix = new Food("Twix", 1, "Stale");
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();
