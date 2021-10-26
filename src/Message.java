@@ -36,6 +36,25 @@ public class Message {
                 You Are Free Once Again, CONGRATULATIONS!
                 """ + TEXT_RESET;
     }
+    public void lowHealth(int health){
+        System.out.println("You have " + health + " health points left.\nYour health seems to have deteriorated to an critical state." +
+                "\nFinding food should be priority number one.");
+    }
+    public void medHealth(int health){
+        System.out.println("You have " + health + " health points left.\nThings arent out of control yet, but be careful." +
+                "\nFinding something to eat would be nice.");
+    }
+    public void highHealth(int health){
+        System.out.println("You have " + health + " health points left.\nGo get them, champ!!" +
+                "\nWho cares about food, just bash in some skulls!");
+    }
+    public void sixtyNine(int health){
+        System.out.println("You have " + health + " health points left. NICE!!!!");
+    }
+    public void youDied(){
+        System.out.println("Unfortunately you have been killed inside the caves. A real shame, so much potential wasted:(" +
+                "\n                  GAME IS OVER!!!");
+    }
 
     public String invalid(){
         return TEXT_RED + "Invalid Input!" + TEXT_RESET;

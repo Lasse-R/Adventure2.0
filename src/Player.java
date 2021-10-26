@@ -8,6 +8,7 @@ public class Player {
     ArrayList<Item> inventory = new ArrayList<>();
     ArrayList<Item> food = new ArrayList<>();
     Item currentItem;
+    Message msg = new Message();
 
     public void showFood() {
         food.clear();
@@ -34,6 +35,20 @@ public class Player {
 
     public int getHealth() {
         return health;
+    }
+    public void showHealth(){
+        if(getHealth() < 36){
+            msg.lowHealth(getHealth());
+        }
+        if(35 < getHealth() && getHealth() < 76 && getHealth() != 69){
+            msg.medHealth(getHealth());
+        }
+        if(getHealth() > 75){
+            msg.highHealth(getHealth());
+        }
+        if (getHealth() == 69){
+            msg.sixtyNine(getHealth());
+        }
     }
     public void eatFood(String foodName){
         boolean check = true;

@@ -5,15 +5,18 @@ public class Adventure {
     public void run() {
 
         Scanner scanner = new Scanner(System.in);
-        boolean gameActive = true;
-        Map map = new Map(); // creating map
-        Player player = new Player(69); // creating player
+        Player player = new Player(69); // creating player with a nice amount of hp
         Message message = new Message();
-        System.out.println(message.intro()); //prints the welcome message and instructions on start-up
+        Map map = new Map(); // creating map
+
+        boolean gameActive = true;
+        String itemName;
+
         player.setCurrentRoom(map.roomCreation()); //places the player in room one and creates the map.
-        System.out.println(player.roomName()); //prints current room at the start of the game
-        String dropItemName;
-        String pickItemName;
+
+        System.out.println(message.intro()); //prints the welcome message and instructions on start-up
+        System.out.println(player.roomName() + "\n" + player.getCurrentRoom().getDescription()); //prints current room at the start of the game
+
 
         while (gameActive) {
 
@@ -32,10 +35,7 @@ public class Adventure {
                     System.out.println(player.getRoomDescription());
                 }
 
-            } else if (playerInput.equalsIgnoreCase("health")) {
-                System.out.println("You have " + player.getHealth() + " health.");
             }
-
              else if (playerInput.equalsIgnoreCase("east") ||
                     playerInput.equalsIgnoreCase("e")) { //move east
                 if (player.invalidRouteEast() == null)
@@ -74,10 +74,13 @@ public class Adventure {
                 else if (playerInput.equalsIgnoreCase("eat")) {
                 System.out.println("What would you like to eat?");
                 player.showFood();
-                pickItemName = scanner.nextLine();
-                player.eatFood(pickItemName);
+                itemName = scanner.nextLine();
+                player.eatFood(itemName);
 
 
+            }
+                else if(playerInput.equalsIgnoreCase("health")){
+                    player.showHealth();
             }
              else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
                 System.out.println("Looking For Stuff In This Area.");
@@ -94,17 +97,16 @@ public class Adventure {
             else if (playerInput.equalsIgnoreCase("take")) {//add items to inventory
                 player.getCurrentRoom().showLoot();
                 System.out.println("Which item would you like to pick up?");
-                pickItemName = scanner.nextLine();
-                player.takeItem(pickItemName);
-
+                itemName = scanner.nextLine();
+                player.takeItem(itemName);
 
             }
 
             else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
                 player.showInventory();
                 System.out.println("Which item would you like to drop?");
-                dropItemName = scanner.nextLine();
-                player.dropItem(dropItemName);
+                itemName = scanner.nextLine();
+                player.dropItem(itemName);
             }
 
             else if (playerInput.equalsIgnoreCase("inventory")) {//Look up what is in inventory
@@ -126,6 +128,10 @@ public class Adventure {
                 gameActive = false;
             } else {
                 System.out.println(message.invalid());
+            }
+            if(player.getHealth() < 1){
+                message.youDied();
+                gameActive = false;
             }
         }
     }

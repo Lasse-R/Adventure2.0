@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Map {
 
-    public Room roomCreation() {//creating all the rooms and assigning pathways
+    public Room roomCreation() {//creating all the rooms/items and assigning pathways
 
         Item sword = new Weapon("sword", 50, 5);
         Item hammer = new Weapon("hammer", 50, 5);
@@ -11,7 +11,7 @@ public class Map {
         Item cutlass = new Weapon("cutlass", 50, 5);
         Item bread = new Food("bread", 1, "Stale", 25);
         Item apple = new Food("apple", 1, "Stale", 75);
-        Item oats = new Food("oats", 1, "Stale", 11);
+        Item oats = new Food("oats", 1, "Stale", -100);
         Item snickers = new Food("snickers", 1, "Stale", 50);
         Item twix = new Food("Twix", 1, "Stale", 30);
 
@@ -25,7 +25,7 @@ public class Map {
         ArrayList<Item> loot8 = new ArrayList<>();
         ArrayList<Item> loot9 = new ArrayList<>();
 
-        Room room1 = new Room("Enjoyable cave.", "A warm, safe and cozy area.", 1, loot1);
+        Room room1 = new Room("Enjoyable cave.", "A warm, safe and cozy area.\nDefinitely doesnt LOOK like there are any monsters around here.", 1, loot1);
         Room room2 = new Room(2, loot2);
         Room room3 = new Room(3, loot3);
         Room room4 = new Room(4, loot4);
@@ -59,9 +59,9 @@ public class Map {
         loot5.add(mace);
         loot5.add(twix);
         loot5.add(snickers);
-        loot7.add(oats);
+        loot1.add(oats);
         loot7.add(bread);
-        loot7.add(apple);
+        loot1.add(apple);
         loot9.add(cutlass);
         loot9.add(spear);
 
