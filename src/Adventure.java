@@ -3,13 +3,11 @@ import java.util.Scanner;
 
 public class Adventure {
 
-
-
     public void run() {
 
         Scanner scanner = new Scanner(System.in);
         Player player = new Player(69); // creating player with a nice amount of hp
-        Message message = new Message();
+        Message message = new Message();    // message board created
         Map map = new Map(); // creating map
 
         boolean gameActive = true;
@@ -20,17 +18,12 @@ public class Adventure {
         System.out.println(message.intro()); //prints the welcome message and instructions on start-up
         System.out.println(player.roomName() + "\n" + player.getRoomDescription()); //prints current room at the start of the game
 
-
         while (gameActive) {
 
             String playerInput;
 
-
             System.out.print("Input: ");
             playerInput = scanner.nextLine();
-
-
-
 
             if (playerInput.equalsIgnoreCase("north") ||
                     playerInput.equalsIgnoreCase("n")) { //move north
@@ -76,16 +69,16 @@ public class Adventure {
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
                 }
-
-
              }
+            else if(playerInput.toLowerCase(Locale.ROOT).contains("eat ")){    // eats something in one sentence
+                itemName = playerInput.substring(4);
+                player.eatFood(itemName);
+            }
                 else if (playerInput.equalsIgnoreCase("eat")) {
                 System.out.println("What would you like to eat?");
                 player.showFood();
                 itemName = scanner.nextLine();
                 player.eatFood(itemName);
-
-
             }
                 else if(playerInput.equalsIgnoreCase("health")){
                     player.showHealth();
@@ -112,6 +105,10 @@ public class Adventure {
                 player.takeItem(itemName);
 
             }
+            else if(playerInput.toLowerCase(Locale.ROOT).contains("drop ")){    // drops something in one sentence
+                itemName = playerInput.substring(5);
+                player.dropItem(itemName);
+            }
 
             else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
                 player.showInventory();
@@ -120,7 +117,7 @@ public class Adventure {
                 player.dropItem(itemName);
             }
 
-            else if (playerInput.equalsIgnoreCase("inventory")) {//Look up what is in inventory
+            else if (playerInput.equalsIgnoreCase("inventory") || playerInput.equalsIgnoreCase("i")) {//Look up what is in inventory
                 player.showInventory();
             }
 
