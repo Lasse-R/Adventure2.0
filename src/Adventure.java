@@ -1,6 +1,9 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Adventure {
+
+
 
     public void run() {
 
@@ -15,14 +18,19 @@ public class Adventure {
         player.setCurrentRoom(map.roomCreation()); //places the player in room one and creates the map.
 
         System.out.println(message.intro()); //prints the welcome message and instructions on start-up
-        System.out.println(player.roomName() + "\n" + player.getCurrentRoom().getDescription()); //prints current room at the start of the game
+        System.out.println(player.roomName() + "\n" + player.getRoomDescription()); //prints current room at the start of the game
 
 
         while (gameActive) {
 
             String playerInput;
+
+
             System.out.print("Input: ");
             playerInput = scanner.nextLine();
+
+
+
 
             if (playerInput.equalsIgnoreCase("north") ||
                     playerInput.equalsIgnoreCase("n")) { //move north
@@ -93,7 +101,7 @@ public class Adventure {
                     System.out.println(message.xyzzy());
                 }
             }
-            else if(playerInput.substring(0, 5).equalsIgnoreCase("take ")){
+            else if(playerInput.toLowerCase(Locale.ROOT).contains("take ")){    // picks up something in one sentence
                 itemName = playerInput.substring(5);
                 player.takeItem(itemName);
             }
@@ -114,7 +122,6 @@ public class Adventure {
 
             else if (playerInput.equalsIgnoreCase("inventory")) {//Look up what is in inventory
                 player.showInventory();
-
             }
 
             else if (playerInput.equalsIgnoreCase("commands")) { //prints list of commands
@@ -138,6 +145,7 @@ public class Adventure {
             }
         }
     }
+
 }
 
 
