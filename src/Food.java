@@ -7,6 +7,10 @@ public class Food extends Item {
         this.taste = taste;
     }
 
+    public Food() {
+
+    }
+
     public String toString(){
         return this.getName();
     }

@@ -2,10 +2,37 @@ import java.util.ArrayList;
 
 public class Player {
 
+    private int  health;
+
     private Room currentRoom;
     ArrayList<Item> inventory = new ArrayList<>();
     Item currentItem;
 
+    public void showFood() {
+        Item bounty = new Food();
+
+
+        for(int i = 0; i < inventory.size();i++) {
+           bounty = inventory.get(i);
+            if (bounty instanceof Food) {
+                System.out.println(inventory.toString());
+            }
+        }
+    }
+
+    public Player(int health) {
+        this.health = health;
+    }
+    public void addHealth(int addHealth) {
+        this.health = this.health + addHealth;
+    }
+    public void lowerHealth(int lowerHealth) {
+        this.health = this.health - lowerHealth;
+    }
+
+    public int getHealth() {
+        return health;
+    }
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }

@@ -7,7 +7,7 @@ public class Adventure {
         Scanner scanner = new Scanner(System.in);
         boolean gameActive = true;
         Map map = new Map(); // creating map
-        Player player = new Player(); // creating player
+        Player player = new Player(69); // creating player
         Message message = new Message();
         System.out.println(message.intro()); //prints the welcome message and instructions on start-up
         player.setCurrentRoom(map.roomCreation()); //places the player in room one and creates the map.
@@ -32,7 +32,11 @@ public class Adventure {
                     System.out.println(player.getRoomDescription());
                 }
 
-            } else if (playerInput.equalsIgnoreCase("east") ||
+            } else if (playerInput.equalsIgnoreCase("health")) {
+                System.out.println("You have " + player.getHealth() + " health.");
+            }
+
+             else if (playerInput.equalsIgnoreCase("east") ||
                     playerInput.equalsIgnoreCase("e")) { //move east
                 if (player.invalidRouteEast() == null)
                     System.out.println("You Cannot Go That Way.");
@@ -65,7 +69,13 @@ public class Adventure {
                     System.out.println(player.getRoomDescription());
                 }
 
-            } else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
+
+             }
+                else if (playerInput.equalsIgnoreCase("eat")) {
+                System.out.println("What would you like to eat?");
+
+            }
+             else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
                 System.out.println("Looking For Stuff In This Area.");
                 if (player.lookAround().equals("[]")) {
                     System.out.println("There Are No Items In This Area.");
