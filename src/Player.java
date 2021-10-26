@@ -120,12 +120,18 @@ public class Player {
     }
 
     public void takeItem(String pickItemName) {
+        boolean check = false;
         for (int i = 0; i < currentRoom.getLoot().size(); i++) {
             currentItem = currentRoom.getLoot().get(i);
             if (currentItem.getName().equalsIgnoreCase(pickItemName)) {
                 inventory.add(currentItem);
                 getCurrentRoom().getLoot().remove(i);
+                msg.somethingsHere(pickItemName);
+                check = true;
             }
+        }
+        if(!check){
+            msg.notThere();
         }
     }
 

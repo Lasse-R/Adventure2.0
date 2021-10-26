@@ -51,6 +51,12 @@ public class Message {
     public void sixtyNine(int health){
         System.out.println("You have " + health + " health points left. NICE!!!!");
     }
+    public void notThere(){
+        System.out.println("There is no such thing in this area.");
+    }
+    public void somethingsHere(String something){
+        System.out.println("You picked up " + something + ".");
+    }
     public void youDied(){
         System.out.println("Unfortunately you have been killed inside the caves. A real shame, so much potential wasted:(" +
                 "\n                  GAME IS OVER!!!");

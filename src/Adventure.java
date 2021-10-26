@@ -93,7 +93,10 @@ public class Adventure {
                     System.out.println(message.xyzzy());
                 }
             }
-
+            else if(playerInput.substring(0, 5).equalsIgnoreCase("take ")){
+                itemName = playerInput.substring(5);
+                player.takeItem(itemName);
+            }
             else if (playerInput.equalsIgnoreCase("take")) {//add items to inventory
                 player.getCurrentRoom().showLoot();
                 System.out.println("Which item would you like to pick up?");
