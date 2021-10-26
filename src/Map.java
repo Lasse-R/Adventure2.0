@@ -9,11 +9,11 @@ public class Map {
         Item mace = new Weapon("mace", 50, 5);
         Item spear = new Weapon("spear", 50, 5);
         Item cutlass = new Weapon("cutlass", 50, 5);
-        Item bread = new Food("bread", 1, "Stale");
-        Item apple = new Food("apple", 1, "Stale");
-        Item oats = new Food("oats", 1, "Stale");
-        Item snickers = new Food("snickers", 1, "Stale");
-        Item twix = new Food("Twix", 1, "Stale");
+        Item bread = new Food("bread", 1, "Stale", 25);
+        Item apple = new Food("apple", 1, "Stale", 75);
+        Item oats = new Food("oats", 1, "Stale", 11);
+        Item snickers = new Food("snickers", 1, "Stale", 50);
+        Item twix = new Food("Twix", 1, "Stale", 30);
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();

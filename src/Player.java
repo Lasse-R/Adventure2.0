@@ -6,18 +6,17 @@ public class Player {
 
     private Room currentRoom;
     ArrayList<Item> inventory = new ArrayList<>();
+    ArrayList<Item> food = new ArrayList<>();
     Item currentItem;
 
     public void showFood() {
-        Item bounty = new Food();
-
-
+        food.clear();
         for(int i = 0; i < inventory.size();i++) {
-           bounty = inventory.get(i);
-            if (bounty instanceof Food) {
-                System.out.println(inventory.toString());
+            if (inventory.get(i) instanceof Food) {
+                food.add(inventory.get(i));
             }
         }
+        System.out.println(food.toString());
     }
 
     public Player(int health) {
@@ -25,6 +24,9 @@ public class Player {
     }
     public void addHealth(int addHealth) {
         this.health = this.health + addHealth;
+        if(health > 100){
+            this.health = 100;
+        }
     }
     public void lowerHealth(int lowerHealth) {
         this.health = this.health - lowerHealth;
@@ -32,6 +34,24 @@ public class Player {
 
     public int getHealth() {
         return health;
+    }
+    public void eatFood(String foodName){
+        boolean check = true;
+        for(int i = 0; i < inventory.size(); i++){
+            if(foodName.equalsIgnoreCase(inventory.get(i).getName())){
+                addHealth(inventory.get(i).getHP());
+                System.out.print("You ate the " + foodName + ", and your health is now " + getHealth());
+                if(health == 100){
+                    System.out.print("(max)");
+                }
+                System.out.println(".");
+                inventory.remove(i);
+                check = false;
+            }
+        }
+        if(check){
+            System.out.println("Sorry, you dont actually have that kind of food with you!");
+        }
     }
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;

@@ -2,11 +2,9 @@ public abstract class Item {
 
     private String name;
     private int weight;
+    private int HP;
 
-    public Item() {
-
-    }
-
+    public Item() {}
 
     public Item(String name, int weight){
         this.name = name;
@@ -28,6 +26,10 @@ public abstract class Item {
     public int getWeight() {
         return weight;
     }
+    public int getHP(){
+        return HP;
+    }
+
 
     public String toString(){
         return "Item: " + name;

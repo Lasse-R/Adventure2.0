@@ -73,6 +73,10 @@ public class Adventure {
              }
                 else if (playerInput.equalsIgnoreCase("eat")) {
                 System.out.println("What would you like to eat?");
+                player.showFood();
+                pickItemName = scanner.nextLine();
+                player.eatFood(pickItemName);
+
 
             }
              else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
