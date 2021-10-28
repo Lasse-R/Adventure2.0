@@ -58,6 +58,9 @@ public class Adventure {
                     System.out.println("Going South");
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
+                    if(player.checkForEnemy() != true){
+                        System.out.println(message.noEnemy());
+                    }
                 }
 
             } else if (playerInput.equalsIgnoreCase("west") ||

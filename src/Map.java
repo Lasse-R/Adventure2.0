@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Map {
 
-    public Room roomCreation() {//creating all the rooms/items and assigning pathways
+    public Room roomCreation() { //creates all the rooms/items and assigning pathways
 
         Item sword = new Melee("Sword",  5);
         Item hammer = new Melee("Hammer", 5);
@@ -17,6 +17,8 @@ public class Map {
         Item danskVand = new Food("Egekilde", 35);
 
         Enemy goat = new Enemy("Goat", 45, 4);
+
+        Enemy goat = new Enemy("goat", 45, 4);
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();

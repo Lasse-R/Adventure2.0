@@ -8,6 +8,7 @@ public class Room {
     private ArrayList<Item> loot;
     Enemy currentEnemy;
     Map map = new Map();
+    Enemy currentEnemy;
     FluffyRoomDescription fluffyRoomDescription = new FluffyRoomDescription();
 
 

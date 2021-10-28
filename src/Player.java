@@ -13,7 +13,7 @@ public class Player {
 
     public void showFood() {
         food.clear();
-        for(int i = 0; i < inventory.size();i++) {
+        for(int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i) instanceof Food) {
                 food.add(inventory.get(i));
             }
@@ -120,6 +120,15 @@ public class Player {
 
     public String lookAround() {
         return currentRoom.roomLoot();
+    }
+
+    public boolean checkForEnemy(){
+        if(currentRoom.currentEnemy == null){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public void takeItem(String pickItemName) {
