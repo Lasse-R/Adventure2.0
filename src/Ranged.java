@@ -6,4 +6,7 @@ public class Ranged extends Weapon{
         super(name, damage);
         this.ammo = ammo;
     }
+    public int getDamage(){
+        return super.getDamage();
+    }
 }

@@ -70,7 +70,7 @@ public class Message {
         return TEXT_RED + "Invalid Input!" + TEXT_RESET;
     }
 
-    public void equipWeapon(String weapon) {
-        System.out.println("You have equipped " + weapon + ".");
+    public void equipWeapon(Weapon weapon) {
+        System.out.println("You have equipped " + weapon.getName() + ". Your weapon deals " + weapon.getDamage() + ".") ;
     }
 }

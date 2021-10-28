@@ -2,6 +2,7 @@ public abstract class Item {
 
     private String name;
     private int HP;
+    private int damage;
 
     public Item() {}
 
@@ -25,5 +26,7 @@ public abstract class Item {
     public String toString(){
         return "Item: " + name;
     }
-
+    public int getDamage(){
+        return damage;
+    }
 }

@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Player {
 
     private int  health;
+    private int damage;
     private Room currentRoom;
     ArrayList<Item> inventory = new ArrayList<>();
     ArrayList<Item> food = new ArrayList<>();
     Item currentItem;
+    Weapon currentWeapon;
     Message msg = new Message();
 
     public void showFood() {
@@ -149,10 +151,11 @@ public class Player {
     public void equipItem(String pickItemName) {
         boolean check = false;
         for (int i = 0; i < inventory.size(); i++) {
-            currentItem = inventory.get(i);
-            if(currentItem instanceof Weapon){
-                if (currentItem.getName().equalsIgnoreCase(pickItemName)) {
-                    msg.equipWeapon(pickItemName);
+            if(inventory.get(i) instanceof Weapon){
+                currentWeapon = (Weapon)inventory.get(i);
+                if (currentWeapon.getName().equalsIgnoreCase(pickItemName)) {
+                    setDamage(currentWeapon);
+                    msg.equipWeapon(currentWeapon);
                     check = true;
             }
             }
@@ -160,6 +163,10 @@ public class Player {
         if(!check){
             msg.noWeapon();
         }
+    }
+
+    public void setDamage(Weapon currentWeapon){
+        this.damage = currentWeapon.getDamage();
     }
 
     public void showInventory(){

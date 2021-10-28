@@ -14,4 +14,7 @@ public abstract class Weapon extends Item {
     public String toString(){
         return this.getName();
     }
+    public int getDamage(){
+        return damage;
+    }
 }
