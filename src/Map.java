@@ -18,7 +18,7 @@ public class Map {
 
         Enemy goat = new Enemy("Goat", 45, 4);
 
-        Enemy goat = new Enemy("goat", 45, 4);
+
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();
@@ -67,11 +67,11 @@ public class Map {
         loot1.add(oats);
         loot7.add(bread);
         loot1.add(apple);
-        loot9.add(bow);
+        loot1.add(bow);
         loot9.add(spear);
         loot3.add(danskVand);
 
-        room2.setCurrentEnemy(goat);
+        room4.setCurrentEnemy(goat);
 
         return room1;
     }

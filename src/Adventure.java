@@ -6,11 +6,12 @@ public class Adventure {
     public void run() {
 
         Scanner scanner = new Scanner(System.in);
-        Player player = new Player(69); // creating player with a nice amount of hp
         Message message = new Message();    // message board created
         Map map = new Map(); // creating map
-
+        Combat combat = new Combat();
+        Player player = new Player(69); // creating player with a nice amount of hp
         boolean gameActive = true;
+
         String itemName;
 
         player.setCurrentRoom(map.roomCreation()); //places the player in room one and creates the map.
@@ -21,6 +22,7 @@ public class Adventure {
         while (gameActive) {
 
             String playerInput;
+            boolean fight = false;
 
             System.out.print("Input: ");
             playerInput = scanner.nextLine();
@@ -28,50 +30,82 @@ public class Adventure {
             if (playerInput.equalsIgnoreCase("north") ||
                     playerInput.equalsIgnoreCase("n")) { //move north
                 if (player.invalidRouteNorth() == null)
-                    System.out.println("You Cannot Go That Way.");
+                    message.cantGoThatWay();
                 else {
                     player.moveNorth();
-                    System.out.println("Going North");
+                    message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
+                    if(!player.checkForEnemy()){
+                        System.out.println(message.noEnemy());
+                    }
+                    else{
+                        fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
+                        if(fight){
+                            combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        }
+                    }
                 }
 
             }
              else if (playerInput.equalsIgnoreCase("east") ||
                     playerInput.equalsIgnoreCase("e")) { //move east
                 if (player.invalidRouteEast() == null)
-                    System.out.println("You Cannot Go That Way.");
+                    message.cantGoThatWay();
                 else {
                     player.moveEast();
-                    System.out.println("Going East");
+                    message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
-
+                    if(!player.checkForEnemy()){
+                        System.out.println(message.noEnemy());
+                    }
+                    else{
+                        fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
+                        if(fight){
+                            combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        }
+                    }
                 }
 
             } else if (playerInput.equalsIgnoreCase("south") ||
                     playerInput.equalsIgnoreCase("s")) { //move south
                 if (player.invalidRouteSouth() == null)
-                    System.out.println("You Cannot Go That Way.");
+                    message.cantGoThatWay();
                 else {
                     player.moveSouth();
-                    System.out.println("Going South");
+                    message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
-                    if(player.checkForEnemy() != true){
+                    if(!player.checkForEnemy()){
                         System.out.println(message.noEnemy());
+                    }
+                    else{
+                        fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
+                        if(fight){
+                            combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        }
                     }
                 }
 
             } else if (playerInput.equalsIgnoreCase("west") ||
                     playerInput.equalsIgnoreCase("w")) { //move west
                 if (player.invalidRouteWest() == null)
-                    System.out.println("You Cannot Go That Way.");
+                    message.cantGoThatWay();
                 else {
                     player.moveWest();
-                    System.out.println("Going West");
+                    message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
+                    if(!player.checkForEnemy()){
+                        System.out.println(message.noEnemy());
+                    }
+                    else{
+                        fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
+                        if(fight){
+                            combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        }
+                    }
                 }
              }
             else if(playerInput.toLowerCase(Locale.ROOT).contains("eat ")){    // eats something in one sentence
@@ -151,7 +185,9 @@ public class Adventure {
                 gameActive = false;
             }
         }
+
     }
+
 
 }
 

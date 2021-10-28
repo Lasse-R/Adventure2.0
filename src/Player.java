@@ -11,6 +11,8 @@ public class Player {
     Weapon currentWeapon;
     Message msg = new Message();
 
+
+
     public void showFood() {
         food.clear();
         for(int i = 0; i < inventory.size(); i++) {
@@ -123,7 +125,7 @@ public class Player {
     }
 
     public boolean checkForEnemy(){
-        if(currentRoom.currentEnemy == null){
+        if(currentRoom.currentEnemy == null || currentRoom.getCurrentEnemyHealth() < 1){
             return false;
         }
         else{
@@ -177,9 +179,15 @@ public class Player {
     public void setDamage(Weapon currentWeapon){
         this.damage = currentWeapon.getDamage();
     }
+    public void damageToHealth(int changeAmount){
+        this.health = (health - changeAmount);
+    }
 
     public void showInventory(){
         System.out.println(inventory.toString());
+        }
+        public int getDamage(){
+        return damage;
         }
     }
 

@@ -1,4 +1,10 @@
+import java.util.Scanner;
+
 public class Message {
+
+    Scanner scanner = new Scanner(System.in);
+
+    String playerInput;
 
     public static final String TEXT_RESET = "\u001B[0m";
     public static final String TEXT_BLACK = "\u001B[30m";
@@ -76,5 +82,35 @@ public class Message {
 
     public String noEnemy(){
         return "There is no enemy here!";
+    }
+    public void cantGoThatWay(){
+        System.out.println("You Cannot Go That Way.");
+    }
+    public void goingDirection(String direction){
+        if(direction.equalsIgnoreCase("w"))
+            System.out.println("Going west.");
+        else if(direction.equalsIgnoreCase("e"))
+            System.out.println("Going east.");
+        else if(direction.equalsIgnoreCase("n"))
+            System.out.println("Going north.");
+        else if(direction.equalsIgnoreCase("s"))
+            System.out.println("Going south.");
+        else
+            System.out.println("Going " + direction + ".");
+    }
+
+    public boolean enemyChoices(Enemy currentEnemy){
+        boolean fight = true;
+        System.out.println("A " + currentEnemy.getName() + " is staring at you. Fight or flee?");
+        do{
+        playerInput = scanner.nextLine();
+        if(playerInput.equalsIgnoreCase("fight"))
+            fight = true;
+        else if(playerInput.equalsIgnoreCase("flee"))
+            fight = false;
+        else
+            System.out.println("Invalid output.");}
+        while(!playerInput.equalsIgnoreCase("fight") && !playerInput.equalsIgnoreCase("flee"));
+        return fight;
     }
 }

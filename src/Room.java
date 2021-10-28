@@ -8,7 +8,7 @@ public class Room {
     private ArrayList<Item> loot;
     Enemy currentEnemy;
     Map map = new Map();
-    Enemy currentEnemy;
+
     FluffyRoomDescription fluffyRoomDescription = new FluffyRoomDescription();
 
 
@@ -89,6 +89,9 @@ public class Room {
     }
     public Enemy getCurrentEnemy(){
         return currentEnemy;
+    }
+    public int getCurrentEnemyHealth(){
+        return currentEnemy.getHealth();
     }
 }
 

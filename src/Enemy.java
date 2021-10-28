@@ -3,6 +3,8 @@ public class Enemy {
     private String name;
     private int damage;
 
+
+    public Enemy(){}
     public Enemy(String name, int health, int damage){
         this.name = name;
         this.health = health;
