@@ -110,12 +110,18 @@ public class Adventure {
                 player.dropItem(itemName);
             }
 
+            else if(playerInput.toLowerCase(Locale.ROOT).contains("equip ")){    // equips something in one sentence
+                itemName = playerInput.substring(6);
+                player.equipItem(itemName);
+            }
+
             else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
                 player.showInventory();
                 System.out.print("Which item would you like to drop? ");
                 itemName = scanner.nextLine();
                 player.dropItem(itemName);
             }
+
 
             else if (playerInput.equalsIgnoreCase("inventory") || playerInput.equalsIgnoreCase("i")) {//Look up what is in inventory
                 player.showInventory();

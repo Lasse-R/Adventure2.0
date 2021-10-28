@@ -145,6 +145,20 @@ public class Player {
 
     }
 
+    public void equipItem(String pickItemName) {
+        boolean check = false;
+        for (int i = 0; i < inventory.size(); i++) {
+            currentItem = inventory.get(i);
+            if (currentItem.getName().equalsIgnoreCase(pickItemName)) {
+                msg.equipWeapon(pickItemName);
+                check = true;
+            }
+        }
+        if(!check){
+            msg.noWeapon();
+        }
+    }
+
     public void showInventory(){
         System.out.println(inventory.toString());
         }

@@ -62,7 +62,15 @@ public class Message {
                 "\n                  GAME IS OVER!!!");
     }
 
+    public void noWeapon() {
+        System.out.println("You don't have this weapon.");
+    }
+
     public String invalid(){ //Always assume the user is trying to crash your program
         return TEXT_RED + "Invalid Input!" + TEXT_RESET;
+    }
+
+    public void equipWeapon(String weapon) {
+        System.out.println("You have equipped " + weapon + ".");
     }
 }
