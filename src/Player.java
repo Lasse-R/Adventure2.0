@@ -52,7 +52,9 @@ public class Player {
     public void eatFood(String foodName){
         boolean check = true;
         for(int i = 0; i < inventory.size(); i++){
+
             if(foodName.equalsIgnoreCase(inventory.get(i).getName())){
+                if(inventory.get(i) instanceof Food){
                 addHealth(inventory.get(i).getHP());
                 System.out.print("You ate the " + foodName + ", and your health is now " + getHealth());
                 if(health == 100){
@@ -61,7 +63,7 @@ public class Player {
                 System.out.println(".");
                 inventory.remove(i);
                 check = false;
-            }
+            }}
         }
         if(check){
             System.out.println("Sorry, you dont actually have that kind of food with you!");
