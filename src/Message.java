@@ -63,7 +63,7 @@ public class Message {
     }
 
     public void noWeapon() {
-        System.out.println("You don't have this weapon.");
+        System.out.println("It's either not a weapon or you don't have it, STOOPID.");
     }
 
     public String invalid(){ //Always assume the user is trying to crash your program
