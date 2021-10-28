@@ -4,16 +4,17 @@ public class Map {
 
     public Room roomCreation() {//creating all the rooms/items and assigning pathways
 
-        Item sword = new Melee("sword",  5);
-        Item hammer = new Melee("hammer", 5);
-        Item mace = new Melee("mace", 5);
-        Item spear = new Melee("spear", 5);
-        Item bow = new Ranged("bow", 5, 10);
-        Item bread = new Food("bread",  25);
-        Item apple = new Food("apple", 75);
-        Item oats = new Food("oats", -100);
-        Item snickers = new Food("snickers", 50);
+        Item sword = new Melee("Sword",  5);
+        Item hammer = new Melee("Hammer", 5);
+        Item mace = new Melee("Mace", 5);
+        Item spear = new Melee("Spear", 5);
+        Item bow = new Ranged("Bow", 5, 10);
+        Item bread = new Food("Bread",  25);
+        Item apple = new Food("Apple", 75);
+        Item oats = new Food("Oats", -100);
+        Item snickers = new Food("Snickers", 50);
         Item twix = new Food("Twix", 30);
+        Item danskVand = new Food("Egekilde", 35);
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();
@@ -64,7 +65,7 @@ public class Map {
         loot1.add(apple);
         loot9.add(bow);
         loot9.add(spear);
-
+        loot3.add(danskVand);
 
         return room1;
     }
