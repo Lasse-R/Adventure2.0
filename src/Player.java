@@ -142,16 +142,17 @@ public class Player {
                 getCurrentRoom().getLoot().add(currentItem);
             }
         }
-
     }
 
     public void equipItem(String pickItemName) {
         boolean check = false;
         for (int i = 0; i < inventory.size(); i++) {
             currentItem = inventory.get(i);
-            if (currentItem.getName().equalsIgnoreCase(pickItemName)) {
-                msg.equipWeapon(pickItemName);
-                check = true;
+            if(currentItem instanceof Weapon){
+                if (currentItem.getName().equalsIgnoreCase(pickItemName)) {
+                    msg.equipWeapon(pickItemName);
+                    check = true;
+            }
             }
         }
         if(!check){
