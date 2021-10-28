@@ -16,6 +16,8 @@ public class Map {
         Item twix = new Food("Twix", 30);
         Item danskVand = new Food("Egekilde", 35);
 
+        Enemy goat = new Enemy("Goat", 45, 4);
+
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();
         ArrayList<Item> loot3 = new ArrayList<>();
@@ -66,6 +68,8 @@ public class Map {
         loot9.add(bow);
         loot9.add(spear);
         loot3.add(danskVand);
+
+        room2.setCurrentEnemy(goat);
 
         return room1;
     }

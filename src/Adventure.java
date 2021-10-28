@@ -46,6 +46,7 @@ public class Adventure {
                     System.out.println("Going East");
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
+
                 }
 
             } else if (playerInput.equalsIgnoreCase("south") ||

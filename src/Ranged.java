@@ -9,4 +9,6 @@ public class Ranged extends Weapon{
     public int getDamage(){
         return super.getDamage();
     }
+
+
 }

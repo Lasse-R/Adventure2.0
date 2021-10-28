@@ -6,6 +6,7 @@ public class Room {
     final private String name;
     final private int roomNumber;
     private ArrayList<Item> loot;
+    Enemy currentEnemy;
     Map map = new Map();
     FluffyRoomDescription fluffyRoomDescription = new FluffyRoomDescription();
 
@@ -80,6 +81,13 @@ public class Room {
     }
     public int getRoomNumber(){
         return roomNumber;
+    }
+
+    public void setCurrentEnemy(Enemy currentEnemy) {
+        this.currentEnemy = currentEnemy;
+    }
+    public Enemy getCurrentEnemy(){
+        return currentEnemy;
     }
 }
 

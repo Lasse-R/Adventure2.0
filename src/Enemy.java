@@ -17,6 +17,7 @@ public class Enemy {
     public int getDamage(){
         return damage;
     }
+
     public void damageToHealth(int changeAmount){
         this.health = (health - changeAmount);
     }

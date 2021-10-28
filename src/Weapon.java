@@ -10,11 +10,11 @@ public abstract class Weapon extends Item {
         super(name);
         this.damage = damage;
     }
-
-    public String toString(){
-        return this.getName();
-    }
     public int getDamage(){
         return damage;
     }
+    public String toString(){
+        return this.getName();
+    }
+
 }
