@@ -1,11 +1,10 @@
 public class Food extends Item {
 
-    private String taste;
+
     private int HP;
 
-    public Food(String name,int weight, String taste,int HP){
-        super(name, weight);
-        this.taste = taste;
+    public Food(String name,int HP){
+        super(name);
         this.HP = HP;
     }
 
@@ -15,10 +14,6 @@ public class Food extends Item {
 
     public int getHP(){
         return HP;
-    }
-
-    public String getTaste(){
-        return taste;
     }
 
     public String toString(){

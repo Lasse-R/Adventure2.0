@@ -145,5 +145,9 @@ public class Player {
 
     }
 
-}
+    public void showInventory(){
+        System.out.println(inventory.toString());
+        }
+    }
+
 

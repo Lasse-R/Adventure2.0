@@ -9,11 +9,11 @@ public class Map {
         Item mace = new Melee("mace", 5);
         Item spear = new Melee("spear", 5);
         Item cutlass = new Melee("cutlass", 5);
-        Item bread = new Food("bread", 1, "Stale", 25);
-        Item apple = new Food("apple", 1, "Stale", 75);
-        Item oats = new Food("oats", 1, "Stale", -100);
-        Item snickers = new Food("snickers", 1, "Stale", 50);
-        Item twix = new Food("Twix", 1, "Stale", 30);
+        Item bread = new Food("bread",  25);
+        Item apple = new Food("apple", 75);
+        Item oats = new Food("oats", -100);
+        Item snickers = new Food("snickers", 50);
+        Item twix = new Food("Twix", 30);
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();
