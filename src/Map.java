@@ -4,11 +4,11 @@ public class Map {
 
     public Room roomCreation() {//creating all the rooms/items and assigning pathways
 
-        Item sword = new Weapon("sword", 50, 5);
-        Item hammer = new Weapon("hammer", 50, 5);
-        Item mace = new Weapon("mace", 50, 5);
-        Item spear = new Weapon("spear", 50, 5);
-        Item cutlass = new Weapon("cutlass", 50, 5);
+        Item sword = new Melee("sword",  5);
+        Item hammer = new Melee("hammer", 5);
+        Item mace = new Melee("mace", 5);
+        Item spear = new Melee("spear", 5);
+        Item cutlass = new Melee("cutlass", 5);
         Item bread = new Food("bread", 1, "Stale", 25);
         Item apple = new Food("apple", 1, "Stale", 75);
         Item oats = new Food("oats", 1, "Stale", -100);

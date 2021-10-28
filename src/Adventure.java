@@ -100,7 +100,7 @@ public class Adventure {
             }
             else if (playerInput.equalsIgnoreCase("take")) {//add items to inventory
                 player.getCurrentRoom().showLoot();
-                System.out.println("Which item would you like to pick up?");
+                System.out.print("Which item would you like to pick up? ");
                 itemName = scanner.nextLine();
                 player.takeItem(itemName);
 
@@ -112,7 +112,7 @@ public class Adventure {
 
             else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
                 player.showInventory();
-                System.out.println("Which item would you like to drop?");
+                System.out.print("Which item would you like to drop? ");
                 itemName = scanner.nextLine();
                 player.dropItem(itemName);
             }

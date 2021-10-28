@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Player {
 
     private int  health;
-
     private Room currentRoom;
     ArrayList<Item> inventory = new ArrayList<>();
     ArrayList<Item> food = new ArrayList<>();
@@ -144,10 +143,6 @@ public class Player {
             }
         }
 
-    }
-
-    public void showInventory(){
-        System.out.println(inventory.toString());
     }
 
 }

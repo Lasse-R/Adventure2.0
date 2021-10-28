@@ -10,7 +10,7 @@ public class Message {
     public static final String TEXT_CYAN = "\u001B[36m";
     public static final String TEXT_WHITE = "\u001B[37m";
 
-    public String intro() { //the game startup message
+    public String intro() { //The game startup message
         return TEXT_PURPLE + """
 
                 Welcome To The Adventure Room Project Game!
@@ -23,12 +23,12 @@ public class Message {
                 --------------------------------------------------------------""" + TEXT_RESET;
     }
 
-    public String xyzzy() { //the key to salvation
+    public String xyzzy() { //The key to salvation
         return "The Word '" + TEXT_CYAN + "Xyzzy" + TEXT_RESET + "' Appears To Be Chiseled On The Stone Wall.\n" +
                 "What On Earth Could That Mean?";
     }
 
-    public String key() { //for when you type xyzzy
+    public String key() { //For when the user types Xyzzy
         return TEXT_BLUE + """
                 You Utter The Weird Word Written On The Wall.
                 All Of A Sudden You Are Stunned By A Bright Flash Of Light!
@@ -62,7 +62,7 @@ public class Message {
                 "\n                  GAME IS OVER!!!");
     }
 
-    public String invalid(){
+    public String invalid(){ //Always assume the user is trying to crash your program
         return TEXT_RED + "Invalid Input!" + TEXT_RESET;
     }
 }

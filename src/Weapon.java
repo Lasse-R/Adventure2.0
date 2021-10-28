@@ -1,9 +1,13 @@
-public class Weapon extends Item {
+public abstract class Weapon extends Item {
 
     private int damage;
 
-    public Weapon(String name,int weight, int damage){
-        super(name, weight);
+    public Weapon(){
+
+    }
+
+    public Weapon(String name, int damage){
+        super(name);
         this.damage = damage;
     }
 
