@@ -24,6 +24,7 @@ public class Message {
                 You Will Have To Use These Simple Commands To Find The Secret Room.
                 ---------------------------|COMMAND LIST|---------------------------
                 | North | East | South | West | Look | Take | Drop | Inventory | Commands | Quit |
+                               | Health | Eat | Equip | Flee | Fight |
                 ----------------------------------------------------------------------------------
                 The Secret Room Contains The Key To Your Salvation! GOOD LUCK!
                 --------------------------------------------------------------""" + TEXT_RESET;
@@ -42,75 +43,97 @@ public class Message {
                 You Are Free Once Again, CONGRATULATIONS!
                 """ + TEXT_RESET;
     }
-    public void lowHealth(int health){
+
+    public void lowHealth(int health) {
         System.out.println("You have " + health + " health points left.\nYour health seems to have deteriorated to an critical state." +
                 "\nFinding food should be priority number one.");
     }
-    public void medHealth(int health){
+
+    public void medHealth(int health) {
         System.out.println("You have " + health + " health points left.\nThings arent out of control yet, but be careful." +
                 "\nFinding something to eat would be nice.");
     }
-    public void highHealth(int health){
+
+    public void highHealth(int health) {
         System.out.println("You have " + health + " health points left.\nGo get them, champ!!" +
                 "\nWho cares about food, just bash in some skulls!");
     }
-    public void sixtyNine(int health){
+
+    public void sixtyNine(int health) {
         System.out.println("You have " + health + " health points left. NICE!!!!");
     }
-    public void notThere(){
+
+    public void notThere() {
         System.out.println("There is no such thing in this area.");
     }
-    public void somethingsHere(String something){
+
+    public void somethingsHere(String something) {
         System.out.println("You picked up " + something + ".");
     }
-    public void youDied(){
-        System.out.println("Unfortunately you have been killed inside the caves. A real shame, so much potential wasted:(" +
-                "\n                  GAME IS OVER!!!");
+
+    public String youDied() {
+        return TEXT_RED + """
+                Unfortunately you died, and while we had such high hopes for you, you obviously blew your chances!
+                                              | Better luck next time! |
+                                                    | GAME OVER! |
+                """ + TEXT_RESET;
     }
 
     public void noWeapon() {
         System.out.println("It's either not a weapon or you don't have it, STOOPID.");
     }
 
-    public String invalid(){ //Always assume the user is trying to crash your program
+    public String invalid() { //Always assume the user is trying to crash your program
         return TEXT_RED + "Invalid Input!" + TEXT_RESET;
     }
 
     public void equipWeapon(Weapon weapon) {
-        System.out.println("You have equipped " + weapon.getName() + ". Your weapon deals " + weapon.getDamage() + " damage.") ;
+        System.out.println("You have equipped " + weapon.getName() + ". Your weapon deals " + weapon.getDamage() + " damage.");
     }
 
-    public String noEnemy(){
+    public String noEnemy() {
         return "There is no enemy here!";
     }
-    public void cantGoThatWay(){
+
+    public void cantGoThatWay() {
         System.out.println("You Cannot Go That Way.");
     }
-    public void goingDirection(String direction){
-        if(direction.equalsIgnoreCase("w"))
+
+    public void goingDirection(String direction) {
+        if (direction.equalsIgnoreCase("w"))
             System.out.println("Going west.");
-        else if(direction.equalsIgnoreCase("e"))
+        else if (direction.equalsIgnoreCase("e"))
             System.out.println("Going east.");
-        else if(direction.equalsIgnoreCase("n"))
+        else if (direction.equalsIgnoreCase("n"))
             System.out.println("Going north.");
-        else if(direction.equalsIgnoreCase("s"))
+        else if (direction.equalsIgnoreCase("s"))
             System.out.println("Going south.");
         else
             System.out.println("Going " + direction + ".");
     }
 
-    public boolean enemyChoices(Enemy currentEnemy){
+    public boolean enemyChoices(Enemy currentEnemy) {
         boolean fight = true;
         System.out.println("A " + currentEnemy.getName() + " is staring at you. Fight or flee?");
-        do{
-        playerInput = scanner.nextLine();
-        if(playerInput.equalsIgnoreCase("fight"))
-            fight = true;
-        else if(playerInput.equalsIgnoreCase("flee"))
-            fight = false;
-        else
-            System.out.println("Invalid output.");}
-        while(!playerInput.equalsIgnoreCase("fight") && !playerInput.equalsIgnoreCase("flee"));
+        do {
+            playerInput = scanner.nextLine();
+            if (playerInput.equalsIgnoreCase("fight"))
+                fight = true;
+            else if (playerInput.equalsIgnoreCase("flee"))
+                fight = false;
+            else
+                System.out.println("Invalid output.");
+        }
+        while (!playerInput.equalsIgnoreCase("fight") && !playerInput.equalsIgnoreCase("flee"));
         return fight;
+    }
+
+    public String commandList(){
+        return """
+                -------------------------------|COMMAND LIST|-------------------------------------
+                | North | East | South | West | Look | Take | Drop | Inventory | Commands | Quit |
+                                   | Health | Eat | Equip | Flee | Fight |
+                                   ---------------------------------------
+                """;
     }
 }

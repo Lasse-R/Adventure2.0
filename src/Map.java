@@ -4,12 +4,12 @@ public class Map {
 
     public Room roomCreation() { //creates all the rooms/items and assigning pathways
 
-        Item sword = new Melee("Sword",  5);
+        Item sword = new Melee("Sword", 5);
         Item hammer = new Melee("Hammer", 5);
         Item mace = new Melee("Mace", 5);
         Item spear = new Melee("Spear", 5);
         Item bow = new Ranged("Bow", 5, 10);
-        Item bread = new Food("Bread",  25);
+        Item bread = new Food("Bread", 25);
         Item apple = new Food("Apple", 75);
         Item oats = new Food("Oats", -100);
         Item snickers = new Food("Snickers", 50);
@@ -17,9 +17,9 @@ public class Map {
         Item danskVand = new Food("Water", 35);
 
         Enemy goat = new Enemy("Goat", 45, 4);
-        Enemy redDragon = new Enemy("Red Dragon of Doom",100, 10);
+        Enemy redDragon = new Enemy("Red Dragon of Doom", 100, 10);
         Enemy bigFatOrc = new Enemy("Orc", 60, 6);
-        Enemy yamcha = new Enemy("Yamcha the Wolf Warrior",  10, 1);
+        Enemy yamcha = new Enemy("Yamcha the Wolf Warrior", 10, 1);
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();

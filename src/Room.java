@@ -24,14 +24,14 @@ public class Room {
         this.loot = loot;
     }
 
-    public Room(String name, String description, int roomNumber, ArrayList loot){
+    public Room(String name, String description, int roomNumber, ArrayList loot) {
         this.name = name;
         this.description = description;
         this.roomNumber = roomNumber;
         this.loot = loot;
     }
 
-    public ArrayList<Item> getLoot(){
+    public ArrayList<Item> getLoot() {
         return loot;
     }
 
@@ -71,26 +71,31 @@ public class Room {
         return name;
     }
 
-    public String roomLoot(){
+    public String roomLoot() {
         return loot.toString();
     }
-    public void showLoot(){
+
+    public void showLoot() {
         System.out.println(loot.toString());
     }
-    public String getDescription(){
+
+    public String getDescription() {
         return description;
     }
-    public int getRoomNumber(){
+
+    public int getRoomNumber() {
         return roomNumber;
     }
 
     public void setCurrentEnemy(Enemy currentEnemy) {
         this.currentEnemy = currentEnemy;
     }
-    public Enemy getCurrentEnemy(){
+
+    public Enemy getCurrentEnemy() {
         return currentEnemy;
     }
-    public int getCurrentEnemyHealth(){
+
+    public int getCurrentEnemyHealth() {
         return currentEnemy.getHealth();
     }
 }

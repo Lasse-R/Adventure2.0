@@ -36,19 +36,17 @@ public class Adventure {
                     message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
-                    if(!player.checkForEnemy()){
+                    if (!player.checkForEnemy()) {
                         System.out.println(message.noEnemy());
-                    }
-                    else{
+                    } else {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
-                        if(fight){
+                        if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
                         }
                     }
                 }
 
-            }
-             else if (playerInput.equalsIgnoreCase("east") ||
+            } else if (playerInput.equalsIgnoreCase("east") ||
                     playerInput.equalsIgnoreCase("e")) { //move east
                 if (player.invalidRouteEast() == null)
                     message.cantGoThatWay();
@@ -57,12 +55,11 @@ public class Adventure {
                     message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
-                    if(!player.checkForEnemy()){
+                    if (!player.checkForEnemy()) {
                         System.out.println(message.noEnemy());
-                    }
-                    else{
+                    } else {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
-                        if(fight){
+                        if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
                         }
                     }
@@ -77,13 +74,14 @@ public class Adventure {
                     message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
-                    if(!player.checkForEnemy()){
+                    if (!player.checkForEnemy()) {
                         System.out.println(message.noEnemy());
-                    }
-                    else{
+                    } else {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
-                        if(fight){
+                        if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        } else {
+                            System.out.println(player.getCurrentRoom().currentEnemy.getName());
                         }
                     }
                 }
@@ -97,31 +95,26 @@ public class Adventure {
                     message.goingDirection(playerInput);
                     System.out.println(player.roomName());
                     System.out.println(player.getRoomDescription());
-                    if(!player.checkForEnemy()){
+                    if (!player.checkForEnemy()) {
                         System.out.println(message.noEnemy());
-                    }
-                    else{
+                    } else {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
-                        if(fight){
+                        if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
                         }
                     }
                 }
-             }
-            else if(playerInput.toLowerCase(Locale.ROOT).contains("eat ")){    // eats something in one sentence
+            } else if (playerInput.toLowerCase(Locale.ROOT).contains("eat ")) {    // eats something in one sentence
                 itemName = playerInput.substring(4);
                 player.eatFood(itemName);
-            }
-                else if (playerInput.equalsIgnoreCase("eat")) {
+            } else if (playerInput.equalsIgnoreCase("eat")) {
                 System.out.println("What would you like to eat?");
                 player.showFood();
                 itemName = scanner.nextLine();
                 player.eatFood(itemName);
-            }
-                else if(playerInput.equalsIgnoreCase("health")){
-                    player.showHealth();
-            }
-             else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
+            } else if (playerInput.equalsIgnoreCase("health")) {
+                player.showHealth();
+            } else if (playerInput.equalsIgnoreCase("look")) { //look for items and secrets
                 System.out.println("Looking For Stuff In This Area.");
                 if (player.lookAround().equals("[]")) {
                     System.out.println("There Are No Items In This Area.");
@@ -131,57 +124,41 @@ public class Adventure {
                 if (player.getCurrentRoom().getRoomNumber() == 5) {
                     System.out.println(message.xyzzy());
                 }
-            }
-            else if(playerInput.toLowerCase(Locale.ROOT).contains("take ")){    // picks up something in one sentence
+            } else if (playerInput.toLowerCase(Locale.ROOT).contains("take ")) {    // picks up something in one sentence
                 itemName = playerInput.substring(5);
                 player.takeItem(itemName);
-            }
-            else if (playerInput.equalsIgnoreCase("take")) {     //add items to inventory
+            } else if (playerInput.equalsIgnoreCase("take")) {     //add items to inventory
                 player.getCurrentRoom().showLoot();
                 System.out.print("Which item would you like to pick up? ");
                 itemName = scanner.nextLine();
                 player.takeItem(itemName);
 
-            }
-            else if(playerInput.toLowerCase(Locale.ROOT).contains("drop ")){    // drops something in one sentence
+            } else if (playerInput.toLowerCase(Locale.ROOT).contains("drop ")) {    // drops something in one sentence
                 itemName = playerInput.substring(5);
                 player.dropItem(itemName);
-            }
-
-            else if(playerInput.toLowerCase(Locale.ROOT).contains("equip ")){    // equips something in one sentence
+            } else if (playerInput.toLowerCase(Locale.ROOT).contains("equip ")) {    // equips something in one sentence
                 itemName = playerInput.substring(6);
                 player.equipItem(itemName);
-            }
-
-            else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
+            } else if (playerInput.equalsIgnoreCase("drop")) { //remove items from inventory
                 player.showInventory();
                 System.out.print("Which item would you like to drop? ");
                 itemName = scanner.nextLine();
                 player.dropItem(itemName);
-            }
-
-
-            else if (playerInput.equalsIgnoreCase("inventory") || playerInput.equalsIgnoreCase("i")) {//Look up what is in inventory
+            } else if (playerInput.equalsIgnoreCase("inventory") || playerInput.equalsIgnoreCase("i")) {//Look up what is in inventory
                 player.showInventory();
-            }
-
-            else if (playerInput.equalsIgnoreCase("commands")) { //prints list of commands
-                System.out.println("| North | East | South | West | Look | Take | Drop | Inventory | Commands | Quit |");
-            }
-
-            else if (playerInput.equalsIgnoreCase("quit")) { //quits the game
+            } else if (playerInput.equalsIgnoreCase("commands")) { //prints list of commands
+                System.out.println(message.commandList());
+            } else if (playerInput.equalsIgnoreCase("quit")) { //quits the game
                 System.out.println("Quitting Game!");
                 gameActive = false;
-            }
-
-            else if (playerInput.equalsIgnoreCase("xyzzy")) {
+            } else if (playerInput.equalsIgnoreCase("xyzzy")) {
                 System.out.println(message.key());
                 gameActive = false;
             } else {
                 System.out.println(message.invalid());
             }
-            if(player.getHealth() < 1){
-                message.youDied();
+            if (player.getHealth() < 1) {
+                System.out.println(message.youDied());
                 gameActive = false;
             }
         }
