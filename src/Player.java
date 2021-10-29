@@ -165,8 +165,14 @@ public class Player {
             if(inventory.get(i) instanceof Weapon){
                 currentWeapon = (Weapon)inventory.get(i);
                 if (currentWeapon.getName().equalsIgnoreCase(pickItemName)) {
+
+                    if(currentWeapon instanceof Ranged){
+                       setDamage((Ranged)currentWeapon);
+                        msg.equipWeapon((Ranged)currentWeapon);
+                    }
+                    else{
                     setDamage(currentWeapon);
-                    msg.equipWeapon(currentWeapon);
+                    msg.equipWeapon(currentWeapon);}
                     check = true;
             }
             }
@@ -175,10 +181,13 @@ public class Player {
             msg.noWeapon();
         }
     }
-
     public void setDamage(Weapon currentWeapon){
-        this.damage = currentWeapon.getDamage();
-    }
+        if(currentWeapon instanceof Ranged){
+            this.damage = ((Ranged) currentWeapon).damageWithAmmunition();
+        }
+        else
+            this.damage = currentWeapon.getDamage();
+            }
     public void damageToHealth(int changeAmount){
         this.health = (health - changeAmount);
     }
@@ -189,6 +198,8 @@ public class Player {
         public int getDamage(){
         return damage;
         }
+
+
     }
 
 

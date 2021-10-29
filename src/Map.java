@@ -8,7 +8,7 @@ public class Map {
         Item hammer = new Melee("Hammer", 5);
         Item mace = new Melee("Mace", 5);
         Item spear = new Melee("Spear", 5);
-        Item bow = new Ranged("Bow", 5, 10);
+        Item bow = new Ranged("Bow", 1, 2, 8);
         Item bread = new Food("Bread",  25);
         Item apple = new Food("Apple", 75);
         Item oats = new Food("Oats", -100);

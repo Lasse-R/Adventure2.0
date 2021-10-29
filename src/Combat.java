@@ -20,6 +20,10 @@ public class Combat {
         do{
 
             if(random.nextInt(11) > 2) {
+                if(player.currentWeapon instanceof Ranged){
+                    player.setDamage((Ranged)player.currentWeapon);
+                    ((Ranged) player.currentWeapon).useAmmo();
+                    }
                 currentEnemy.damageToHealth(player.getDamage());
                 System.out.println("You hit " + currentEnemy.getName() + ". For " + player.getDamage() + " damage.");
             }

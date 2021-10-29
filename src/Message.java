@@ -79,6 +79,10 @@ public class Message {
     public void equipWeapon(Weapon weapon) {
         System.out.println("You have equipped " + weapon.getName() + ". Your weapon deals " + weapon.getDamage() + " damage.") ;
     }
+    public void equipWeapon(Ranged weapon) {
+        System.out.println("You have equipped " + weapon.getName() + ". Your weapon deals " + weapon.getDamageRanged() + " damage if you have ammunition." +
+                " Otherwise it deals " + weapon.getDamage() + " damage. You have " + weapon.getAmmo() + " pieces of ammunition.");
+    }
 
     public String noEnemy(){
         return "There is no enemy here!";
