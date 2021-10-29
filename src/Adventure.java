@@ -80,8 +80,6 @@ public class Adventure {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
                         if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
-                        } else {
-                            System.out.println(player.getCurrentRoom().currentEnemy.getName());
                         }
                     }
                 }
