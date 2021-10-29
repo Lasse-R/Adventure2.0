@@ -3,7 +3,7 @@ public class Food extends Item {
 
     private int HP;
 
-    public Food(String name,int HP){
+    public Food(String name, int HP) {
         super(name);
         this.HP = HP;
     }
@@ -12,11 +12,11 @@ public class Food extends Item {
 
     }
 
-    public int getHP(){
+    public int getHP() {
         return HP;
     }
 
-    public String toString(){
+    public String toString() {
         return this.getName();
     }
 }

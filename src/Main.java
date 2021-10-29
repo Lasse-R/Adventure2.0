@@ -1,8 +1,8 @@
 public class Main {
-     public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Adventure adventure = new Adventure();
+    Adventure adventure = new Adventure();
 
-        adventure.run();
-    }
+    adventure.run();
+  }
 }

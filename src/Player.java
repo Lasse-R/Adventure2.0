@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class Player {
+public class Player { // damn this class is bloated
 
-    private int  health;
+    private int health;
     private int damage;
     private Room currentRoom;
     ArrayList<Item> inventory = new ArrayList<>();
@@ -15,7 +15,7 @@ public class Player {
 
     public void showFood() {
         food.clear();
-        for(int i = 0; i < inventory.size(); i++) {
+        for (int i = 0; i < inventory.size(); i++) {
             if (inventory.get(i) instanceof Food) {
                 food.add(inventory.get(i));
             }
@@ -28,7 +28,7 @@ public class Player {
     }
     public void addHealth(int addHealth) {
         this.health = this.health + addHealth;
-        if(health > 100){
+        if (health > 100) {
             this.health = 100;
         }
     }
@@ -39,40 +39,44 @@ public class Player {
     public int getHealth() {
         return health;
     }
-    public void showHealth(){
-        if(getHealth() < 36){
+
+    public void showHealth() {
+        if (getHealth() < 36) {
             msg.lowHealth(getHealth());
         }
-        if(35 < getHealth() && getHealth() < 76 && getHealth() != 69){
+        if (35 < getHealth() && getHealth() < 76 && getHealth() != 69) {
             msg.medHealth(getHealth());
         }
-        if(getHealth() > 75){
+        if (getHealth() > 75) {
             msg.highHealth(getHealth());
         }
-        if (getHealth() == 69){
+        if (getHealth() == 69) {
             msg.sixtyNine(getHealth());
         }
     }
-    public void eatFood(String foodName){
-        boolean check = true;
-        for(int i = 0; i < inventory.size(); i++){
 
-            if(foodName.equalsIgnoreCase(inventory.get(i).getName())){
-                if(inventory.get(i) instanceof Food){
-                addHealth(inventory.get(i).getHP());
-                System.out.print("You ate the " + foodName + ", and your health is now " + getHealth());
-                if(health == 100){
-                    System.out.print("(max)");
+    public void eatFood(String foodName) {
+        boolean check = true;
+        for (int i = 0; i < inventory.size(); i++) {
+
+            if (foodName.equalsIgnoreCase(inventory.get(i).getName())) {
+                if (inventory.get(i) instanceof Food) {
+                    addHealth(inventory.get(i).getHP());
+                    System.out.print("You ate the " + foodName + ", and your health is now " + getHealth());
+                    if (health == 100) {
+                        System.out.print("(max)");
+                    }
+                    System.out.println(".");
+                    inventory.remove(i);
+                    check = false;
                 }
-                System.out.println(".");
-                inventory.remove(i);
-                check = false;
-            }}
+            }
         }
-        if(check){
+        if (check) {
             System.out.println("Sorry, you dont actually have that kind of food with you!");
         }
     }
+
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
     }
@@ -144,15 +148,15 @@ public class Player {
                 check = true;
             }
         }
-        if(!check){
+        if (!check) {
             msg.notThere();
         }
     }
 
-    public void dropItem(String itemName){
-        for(int i = 0; i < inventory.size(); i++){
+    public void dropItem(String itemName) {
+        for (int i = 0; i < inventory.size(); i++) {
             currentItem = inventory.get(i);
-            if(inventory.get(i).getName().equalsIgnoreCase(itemName)){
+            if (inventory.get(i).getName().equalsIgnoreCase(itemName)) {
                 inventory.remove(i);
                 getCurrentRoom().getLoot().add(currentItem);
             }
@@ -162,8 +166,8 @@ public class Player {
     public void equipItem(String pickItemName) {
         boolean check = false;
         for (int i = 0; i < inventory.size(); i++) {
-            if(inventory.get(i) instanceof Weapon){
-                currentWeapon = (Weapon)inventory.get(i);
+            if (inventory.get(i) instanceof Weapon) {
+                currentWeapon = (Weapon) inventory.get(i);
                 if (currentWeapon.getName().equalsIgnoreCase(pickItemName)) {
 
                     if(currentWeapon instanceof Ranged){
@@ -174,10 +178,10 @@ public class Player {
                     setDamage(currentWeapon);
                     msg.equipWeapon(currentWeapon);}
                     check = true;
-            }
+                }
             }
         }
-        if(!check){
+        if (!check) {
             msg.noWeapon();
         }
     }
@@ -192,10 +196,11 @@ public class Player {
         this.health = (health - changeAmount);
     }
 
-    public void showInventory(){
+    public void showInventory() {
         System.out.println(inventory.toString());
-        }
-        public int getDamage(){
+    }
+
+    public int getDamage() {
         return damage;
         }
 

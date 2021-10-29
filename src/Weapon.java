@@ -2,15 +2,16 @@ public abstract class Weapon extends Item {
 
     private int damage;
 
-    public Weapon(){
+    public Weapon() {
 
     }
 
-    public Weapon(String name, int damage){
+    public Weapon(String name, int damage) {
         super(name);
         this.damage = damage;
     }
-    public int getDamage(){
+
+    public int getDamage() {
         return damage;
     }
     public void setDamage(int damage){
@@ -19,6 +20,5 @@ public abstract class Weapon extends Item {
     public String toString(){
         return this.getName();
     }
-
 
 }

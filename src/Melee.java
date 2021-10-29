@@ -1,9 +1,10 @@
 public class Melee extends Weapon {
 
-    public Melee(String name, int damage){
+    public Melee(String name, int damage) {
         super(name, damage);
     }
-    public int getDamage(){
+
+    public int getDamage() {
         return super.getDamage();
     }
 }
