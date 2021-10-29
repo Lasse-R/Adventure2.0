@@ -136,7 +136,7 @@ public class Adventure {
                 itemName = playerInput.substring(5);
                 player.takeItem(itemName);
             }
-            else if (playerInput.equalsIgnoreCase("take")) {//add items to inventory
+            else if (playerInput.equalsIgnoreCase("take")) {     //add items to inventory
                 player.getCurrentRoom().showLoot();
                 System.out.print("Which item would you like to pick up? ");
                 itemName = scanner.nextLine();

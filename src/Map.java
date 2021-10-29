@@ -14,11 +14,12 @@ public class Map {
         Item oats = new Food("Oats", -100);
         Item snickers = new Food("Snickers", 50);
         Item twix = new Food("Twix", 30);
-        Item danskVand = new Food("Egekilde", 35);
+        Item danskVand = new Food("Water", 35);
 
         Enemy goat = new Enemy("Goat", 45, 4);
-
-
+        Enemy redDragon = new Enemy("Red Dragon of Doom",100, 10);
+        Enemy bigFatOrc = new Enemy("Orc", 60, 6);
+        Enemy yamcha = new Enemy("Yamcha the Wolf Warrior",  10, 1);
 
         ArrayList<Item> loot1 = new ArrayList<>();
         ArrayList<Item> loot2 = new ArrayList<>();
@@ -72,7 +73,9 @@ public class Map {
         loot3.add(danskVand);
 
         room4.setCurrentEnemy(goat);
-
+        room9.setCurrentEnemy(bigFatOrc);
+        room5.setCurrentEnemy(redDragon);
+        room7.setCurrentEnemy(yamcha);
         return room1;
     }
 
