@@ -8,7 +8,7 @@ public class Map {
         Item hammer = new Melee("Hammer", 5);
         Item mace = new Melee("Mace", 5);
         Item spear = new Melee("Spear", 5);
-        Item bow = new Ranged("Bow", 5, 10);
+        Item bow = new Ranged("Bow", 10, 10);
         Item bread = new Food("Bread", 25);
         Item apple = new Food("Apple", 75);
         Item oats = new Food("Oats", -100);
@@ -62,13 +62,13 @@ public class Map {
 
         loot1.add(sword);
         loot3.add(hammer);
-        loot5.add(mace);
-        loot5.add(twix);
-        loot5.add(snickers);
+        loot4.add(mace);
+        loot6.add(twix);
+        loot4.add(snickers);
         loot1.add(oats);
         loot7.add(bread);
         loot1.add(apple);
-        loot1.add(bow);
+        loot2.add(bow);
         loot9.add(spear);
         loot3.add(danskVand);
 
