@@ -114,7 +114,7 @@ public class Message {
 
     public boolean enemyChoices(Enemy currentEnemy) {
         boolean fight = true;
-        System.out.println("A " + currentEnemy.getName() + " is staring at you. Fight or flee?");
+        System.out.println(TEXT_RED + currentEnemy.getName() + TEXT_RESET + " is staring at you. Fight or flee?");
         do {
             playerInput = scanner.nextLine();
             if (playerInput.equalsIgnoreCase("fight"))

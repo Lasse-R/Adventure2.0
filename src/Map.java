@@ -16,9 +16,9 @@ public class Map {
         Item twix = new Food("Twix", 30);
         Item danskVand = new Food("Water", 35);
 
-        Enemy goat = new Enemy("Goat", 45, 4);
-        Enemy redDragon = new Enemy("Red Dragon of Doom", 100, 10);
-        Enemy bigFatOrc = new Enemy("Orc", 60, 6);
+        Enemy goat = new Enemy("Steve the Goat", 45, 4);
+        Enemy redDragon = new Enemy("A Red Dragon of Doom", 100, 10);
+        Enemy bigFatOrc = new Enemy("Charlie the Orc", 60, 6);
         Enemy yamcha = new Enemy("Yamcha the Wolf Warrior", 10, 1);
 
         ArrayList<Item> loot1 = new ArrayList<>();
