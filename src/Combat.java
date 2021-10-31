@@ -7,15 +7,10 @@ public class Combat {
     Enemy currentEnemy = new Enemy();
     Random random = new Random();
 
-
-
-
     public void fight(Enemy currentEnemy, Player player){
         setCurrentEnemy(currentEnemy);
         String fightOrFlee;
         boolean fight = true;
-
-
 
         do{
 
@@ -37,18 +32,20 @@ public class Combat {
                         if(fightOrFlee.equalsIgnoreCase("flee")){
                             fight = false;
                             System.out.println("You ran like a little bitch!!");
+                            player.flee();
                         }
                     }
                 }
-                else if (player.getHealth() > 30) {
+                else if (player.getHealth() > 20) {
                     player.damageToHealth(currentEnemy.getDamage());
                     System.out.println(currentEnemy.getName() + " hit you for " + currentEnemy.getDamage() + " damage. You have " + player.getHealth() + " health left.");
-                    if (player.getHealth() <= 30) {
+                    if (player.getHealth() <= 20) {
                         System.out.println("Would you like to keep fighting or flee?");
                         fightOrFlee = scanner.nextLine();
                         if(fightOrFlee.equalsIgnoreCase("flee")){
                             fight = false;
-                            System.out.println("Probably wise decision.");
+                            System.out.println("Probably a wise decision.");
+                            player.flee();
                         }
                     }
                 }

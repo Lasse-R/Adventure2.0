@@ -5,6 +5,7 @@ public class Player { // damn this class is bloated
     private int health;
     private int damage;
     private Room currentRoom;
+    private Room lastRoom;
     ArrayList<Item> inventory = new ArrayList<>();
     ArrayList<Item> food = new ArrayList<>();
     Item currentItem;
@@ -84,20 +85,36 @@ public class Player { // damn this class is bloated
     public Room getCurrentRoom() {
         return currentRoom;
     }
+    public void setLastRoom(Room lastRoom){
+        this.lastRoom = lastRoom;
+    }
+    public Room getLastRoom(){
+        return lastRoom;
+    }
+
+    public void flee(){
+        setCurrentRoom(getLastRoom());
+        msg.flee(getCurrentRoom());
+
+    }
 
     public void moveNorth() {
+        setLastRoom(getCurrentRoom());
         setCurrentRoom(getCurrentRoom().getNorth());
     }
 
     public void moveEast() {
+        setLastRoom(getCurrentRoom());
         setCurrentRoom(getCurrentRoom().getEast());
     }
 
     public void moveSouth() {
+        setLastRoom(getCurrentRoom());
         setCurrentRoom(getCurrentRoom().getSouth());
     }
 
     public void moveWest() {
+        setLastRoom(getCurrentRoom());
         setCurrentRoom(getCurrentRoom().getWest());
     }
 
@@ -159,6 +176,9 @@ public class Player { // damn this class is bloated
             if (inventory.get(i).getName().equalsIgnoreCase(itemName)) {
                 inventory.remove(i);
                 getCurrentRoom().getLoot().add(currentItem);
+                /*if(currentWeapon.getName().equalsIgnoreCase(itemName)){
+
+                }*/
             }
         }
     }

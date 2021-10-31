@@ -140,4 +140,8 @@ public class Message {
                                    ---------------------------------------
                 """;
     }
+
+    public void flee(Room currentRoom){
+        System.out.println("You managed to flee back to:\n" + currentRoom.getName());
+    }
 }

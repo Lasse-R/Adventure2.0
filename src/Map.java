@@ -5,16 +5,16 @@ public class Map {
     public Room roomCreation() { //creates all the rooms/items and assigning pathways
 
         Item sword = new Melee("Sword", 5);
-        Item hammer = new Melee("Hammer", 5);
-        Item mace = new Melee("Mace", 5);
-        Item spear = new Melee("Spear", 5);
-        Item bow = new Ranged("Bow", 1, 2, 8);
+        Item hammer = new Melee("Hammer", 3);
+        Item mace = new Melee("Mace", 4);
+        Item spear = new Melee("Spear", 6);
+        Item bow = new Ranged("Bow", 1, 8, 8);
         Item bread = new Food("Bread",  25);
+        Item oats = new Food("Oats", -15);
         Item apple = new Food("Apple", 75);
-        Item oats = new Food("Oats", -100);
         Item snickers = new Food("Snickers", 50);
         Item twix = new Food("Twix", 30);
-        Item danskVand = new Food("Water", 35);
+        Item danskVand = new Food("Water", 35);     // doesnt really work with the command "eat"
 
         Enemy goat = new Enemy("Steve the Goat", 45, 4);
         Enemy redDragon = new Enemy("A Red Dragon of Doom", 100, 10);

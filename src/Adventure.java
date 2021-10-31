@@ -43,6 +43,9 @@ public class Adventure {
                         if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
                         }
+                        else{
+                            player.flee();
+                        }
                     }
                 }
 
@@ -61,6 +64,9 @@ public class Adventure {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
                         if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        }
+                        else{
+                            player.flee();
                         }
                     }
                 }
@@ -81,6 +87,9 @@ public class Adventure {
                         if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
                         }
+                        else{
+                            player.flee();
+                        }
                     }
                 }
 
@@ -99,6 +108,9 @@ public class Adventure {
                         fight = message.enemyChoices(player.getCurrentRoom().currentEnemy);
                         if (fight) {
                             combat.fight(player.getCurrentRoom().getCurrentEnemy(), player);
+                        }
+                        else{
+                            player.flee();
                         }
                     }
                 }
