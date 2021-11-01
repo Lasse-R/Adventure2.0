@@ -14,7 +14,8 @@ public class Map {
         Item apple = new Food("Apple", 45);
         Item snickers = new Food("Snickers", 50);
         Item twix = new Food("Twix", 40);
-        Item danskVand = new Food("Water", 35);     // doesnt really work with the command "eat"
+        Item bigBanana = new Food("Big banana", 35);
+        Item lollipop = new Food("Lollipop", 20);
 
         Enemy goat = new Enemy("Steve the Goat", 45, 4);
         Enemy redDragon = new Enemy("Red Dragon of Doom", 100, 10);
