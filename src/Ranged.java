@@ -28,6 +28,9 @@ public class Ranged extends Weapon{
     }
     public void useAmmo(){
         this.ammo = (getAmmo() - 1);
+        if (this.ammo < 0){
+            this.ammo = 0;
+        }
     }
     public int getAmmo(){
         return ammo;

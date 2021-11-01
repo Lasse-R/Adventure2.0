@@ -4,20 +4,20 @@ public class Map {
 
     public Room roomCreation() { //creates all the rooms/items and assigning pathways
 
-        Item sword = new Melee("Sword", 5);
+        Item sword = new Melee("Sword", 6);
         Item hammer = new Melee("Hammer", 3);
         Item mace = new Melee("Mace", 4);
-        Item spear = new Melee("Spear", 6);
-        Item bow = new Ranged("Bow", 1, 8, 8);
-        Item bread = new Food("Bread",  25);
-        Item oats = new Food("Oats", -15);
-        Item apple = new Food("Apple", 75);
+        Item spear = new Ranged("Spear", 0, 1, 24);
+        Item bow = new Ranged("Bow", 1, 5, 9);
+        Item bread = new Food("Bread",  35);
+        Item oats = new Food("Oats", 25);
+        Item apple = new Food("Apple", 45);
         Item snickers = new Food("Snickers", 50);
-        Item twix = new Food("Twix", 30);
-        Item danskVand = new Food("Water", 35);     // doesnt really work with the command "eat"
+        Item twix = new Food("Twix", 40);
+        Item  = new Food("Water", 35);     // doesnt really work with the command "eat"
 
         Enemy goat = new Enemy("Steve the Goat", 45, 4);
-        Enemy redDragon = new Enemy("A Red Dragon of Doom", 100, 10);
+        Enemy redDragon = new Enemy("Red Dragon of Doom", 100, 10);
         Enemy bigFatOrc = new Enemy("Charlie the Orc", 60, 6);
         Enemy yamcha = new Enemy("Yamcha the Wolf Warrior", 10, 1);
 
@@ -60,9 +60,9 @@ public class Map {
         room9.setNorth(room6);
         room9.setWest(room8);
 
-        loot1.add(sword);
-        loot3.add(hammer);
-        loot4.add(mace);
+        loot9.add(sword);
+        loot1.add(hammer);
+        loot2.add(mace);
         loot6.add(twix);
         loot4.add(snickers);
         loot1.add(oats);
