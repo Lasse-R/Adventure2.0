@@ -71,7 +71,7 @@ public class Map {
         loot1.add(apple);
         loot1.add(bow);
         loot9.add(spear);
-        loot3.add(danskVand);
+        loot3.add(bigBanana);
 
         room4.setCurrentEnemy(goat);
         room9.setCurrentEnemy(bigFatOrc);
